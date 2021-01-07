@@ -8,8 +8,7 @@
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin-top: 20px;
-    transition: 0;
+    transition: width 2s ease-in-out;
     }
 
 #menu::before,
@@ -35,11 +34,8 @@
     border-color: greenyellow;
     border-width: 5px;
     border-style: solid;
-    width: 60px;
-    margin: 40px;
-    position: absolute;
+    width: var(--menu-bar-width);
     padding: 20px 0;
-
 }
 
 .container:hover #menu {
@@ -48,8 +44,12 @@
 
 .container:hover #menu::before {
     transform: rotate(45deg);
+    transition: ease-in-out .2s;
+    top: 0;
 }
 
 .container:hover #menu::after {
     transform: rotate(-45deg);
+    transition: ease-in-out .2s;
+    top: 0;
 }
