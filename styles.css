@@ -8,8 +8,8 @@
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
-}
+    transition: width 2s ease-in-out;
+    }
 
 #menu::before,
 #menu::after {
@@ -19,15 +19,37 @@
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
     position: absolute;
+    left: 0;
 }
 
 #menu::before {
-    left: 0;
     top: -20px;
 }
 
 #menu::after {
-    left: 0;
     top: 20px;
 }
 
+.container {
+    border-color: greenyellow;
+    border-width: 5px;
+    border-style: solid;
+    width: var(--menu-bar-width);
+    padding: 20px 0;
+}
+
+.container:hover #menu {
+    background-color: transparent;
+}
+
+.container:hover #menu::before {
+    transform: rotate(45deg);
+    transition: ease-in-out .2s;
+    top: 0;
+}
+
+.container:hover #menu::after {
+    transform: rotate(-45deg);
+    transition: ease-in-out .2s;
+    top: 0;
+}
